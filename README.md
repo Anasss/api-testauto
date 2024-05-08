@@ -1,3 +1,4 @@
+![Github Actions](https://github.com/Anasss/api-testauto/actions/workflows/maven.yml/badge.svg)
 # API Test Automation
 
 This repository contains an API testing automation suite using Spring Boot, Cucumber and Rest Assured.
