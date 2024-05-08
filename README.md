@@ -4,13 +4,13 @@ This repository contains an API testing automation suite using Spring Boot, Cucu
 The current feature is to test the Fixer time series API, which provides historical exchange rates.
 See: https://apilayer.com/marketplace/fixer-api
 
-This suite can be used to test other APIs by adding new feature files and step definitions.
+This suite can test other APIs by adding new feature files and step definitions.
 
 ## Testing approach
 
 #### JSON Schema validation: 
 - We generate a JSON schema from our HTTP request expected reply.
-- We check that the API is returning the expected response code and is matching the JSON Schema.
+- We check that the API returns the expected response code and matches the JSON Schema.
 - We can also perform additional functional checks if needed.
 
 ## Project Structure
@@ -18,13 +18,14 @@ This suite can be used to test other APIs by adding new feature files and step d
 - `src/main/java/com/api/testauto/steps`: Contains the Cucumber step definitions.
 - `src/main/java/com/api/testauto/services`: Contains the services used in the step definitions.
 - `src/main/java/com/api/testauto/utils`: Contains utility classes.
-- `src/main/java/com/api/testauto/worlds`: Contains the world objects used to share state between steps.
+- `src/main/java/com/api/testauto/worlds`: Contains the world objects that share state between steps.
 
 ## Setting up the project
 
-To set up the project, you can clone the repository and execute the following commands:
+To set up the project, you can execute the following commands:
 
 ```shell
+git clone https://github.com/Anasss/api-testauto.git
 cd api-testauto
 mvn install
 ```
@@ -40,7 +41,7 @@ In Cucumber, tags are used to filter scenarios that you want to execute. You can
 ```gherkin
 @test
 Scenario Outline: Get valid historical rates between two valid dates
-Given User makes a GET request to Fixer API endpoint with <start_date> and <end_date>
+Given User makes a GET request to the Fixer API endpoint with <start_date> and <end_date>
 Then The response matches the schema <valid_rates_schema> and the status code should be <status_code>
 ```
 
